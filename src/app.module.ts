@@ -5,7 +5,6 @@ import { UsersModule } from './users/users.module';
 import { AdminController } from './admin/admin.controller';
 import { AdminService } from './admin/admin.service';
 import { AdminModule } from './admin/admin.module';
-import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
