@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
+import { AdminController } from './admin/admin.controller';
+import { AdminService } from './admin/admin.service';
+import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
@@ -21,8 +24,9 @@ import { UsersModule } from './users/users.module';
       synchronize: !Boolean(process.env.PRODUCTION),
     }),
     UsersModule,
+    AdminModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AdminController],
+  providers: [AdminService],
 })
 export class AppModule {}
